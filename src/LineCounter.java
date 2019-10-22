@@ -16,25 +16,37 @@ public class LineCounter
 
    public LineCounter(String s)
    {
+	   setLine(s);
+	   
    }
 
 	public void setLine(String s)
 	{
+		this.line = s;
 	}
 
 	public int getCount()
 	{
 		int count=0;	
+		
+		Scanner karrl = new Scanner (line);
+		
+		while(karrl.hasNextInt())
+		{
+			karrl.nextInt();
+			count++;
+		}
+		
 		return count;
 	}
 
 	public String getLine()
 	{
-		return "";
+		return line;
 	}
 
 	public String toString()
 	{
-		return getLine();
+		return "count = " +getCount();
 	}
 }
